@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title id="title">Página de teste</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="app.css">
+	<link rel="stylesheet" type="text/css" href="translate/pt-br.css" id="lang">
+</head>
+<body>
+
+	<h1><span id="welcome"></span></h1>
+	<p><span id="description"></span></p>
+	<p>
+		<button id="changeLang"><span id="translate"></span></button>
+	</p>
+	<p>
+		<small>&copy; 2018 - <span id="rights"></span></small>
+	</p>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		var button = $('#changeLang');
+		var lang = $('#lang');
+		button.on('click', function(event){
+			event.preventDefault();
+			if(lang.attr('href')=='translate/pt-br.css'){
+				lang.attr('href','translate/en-us.css');
+			} else {
+				lang.attr('href','translate/pt-br.css');
+			}
+		});
+	</script>
+
+</body>
+</html>
